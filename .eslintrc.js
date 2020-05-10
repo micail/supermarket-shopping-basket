@@ -2,11 +2,10 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest: true
   },
   extends: [
-    'airbnb-typescript-prettier',
     'plugin:react/recommended',
+    "plugin:jest/recommended",
     'airbnb',
   ],
   globals: {
@@ -23,13 +22,5 @@ module.exports = {
   plugins: [
     'react',
   ],
-  rules: {
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
-      },
-    },
-  }
+  rules: {},
 };
