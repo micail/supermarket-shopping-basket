@@ -3,7 +3,7 @@ import { addPriceList, deletePriceList } from '../../../redux/actions/priceListA
 
 import dataMock from '../../dataMock/priceList';
 
-describe('Price list reducer', () => {
+describe('Price list reducer tests', () => {
   it('should return initial state', () => {
     const state = [];
     expect(priceListReducer(undefined, [])).toEqual(state);
