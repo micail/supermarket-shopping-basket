@@ -7,6 +7,7 @@ import {
   applyMiddleware, compose,
 } from 'redux';
 
+import priceListReducer from './reducers/priceListReducer';
 /**
  * Creates a new Redux store
  * @memberof redux
@@ -16,6 +17,7 @@ import {
 
 export const makeStore = () => {
   const reducers = {
+    priceListReducer,
   };
 
   const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
