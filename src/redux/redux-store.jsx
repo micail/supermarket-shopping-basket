@@ -8,6 +8,13 @@ import {
 } from 'redux';
 
 import priceListReducer from './reducers/priceListReducer';
+import receiptReducer from './reducers/receiptReducer';
+
+const pipeLine = (store) => (next) => (action) => {
+  const prevState = store.getState();
+  next(action);
+};
+
 /**
  * Creates a new Redux store
  * @memberof redux
@@ -18,10 +25,11 @@ import priceListReducer from './reducers/priceListReducer';
 export const makeStore = () => {
   const reducers = {
     priceListReducer,
+    receiptReducer,
   };
 
   const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-  const applyMid = composeEnhancers(applyMiddleware());
+  const applyMid = composeEnhancers(applyMiddleware(pipeLine));
   const store = createStore(combineReducers(reducers), applyMid);
 
   return store;
