@@ -1,5 +1,5 @@
 import makeStore from '../../redux/redux-store';
-import priceList from '../dataMock/priceList';
+import { priceList } from '../dataMock/priceList';
 
 import { loadPriceList, addItem } from '../../redux/middleware';
 
@@ -27,5 +27,17 @@ describe('Middleware tests', () => {
     const finalPrice = Number((unitPrice * weight).toFixed(2));
     const expected = [1, [2, 0.3, finalPrice]];
     expect(store.getState().receiptReducer).toEqual(expected);
+  });
+  it('should calculate sub-total', () => {
+    const listClone = [...priceList];
+    const basketItems = [1, [2, 0.3, 0.6]];
+    const itemPrices = basketItems.map((item) => {
+      if (typeof item === 'number') {
+        return listClone[item][1];
+      }
+      return item[2];
+    });
+    const subTotal = itemPrices.reduce((acc, value) => acc + value);
+    expect(store.getState().totalsReducer.subTotal).toEqual(subTotal);
   });
 });

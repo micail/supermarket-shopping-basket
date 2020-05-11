@@ -9,19 +9,28 @@ import {
 
 import priceListReducer from './reducers/priceListReducer';
 import receiptReducer from './reducers/receiptReducer';
+import totalsReducer from './reducers/totalsReducer';
 
-import { addItem, calculatePriceOnWeight } from './middleware';
+import { addItem, calculatePriceOnWeight, calculateSubTotal } from './middleware';
 
 const pipeLine = (store) => (next) => (action) => {
   const prevState = store.getState();
+  const prevReceiptReducerState = [...prevState.receiptReducer];
 
   if ((action.type === 'ADD_ITEM' && Array.isArray(action.index)) && action.index[0].length === 2) {
     const newData = calculatePriceOnWeight(prevState, action.index);
     return addItem(store, [newData]);
   }
+
   next(action);
+
   const nextState = store.getState();
-  // console.log(nextState);
+  const nextReceiptReducerState = [...nextState.receiptReducer];
+
+  /** Calculate sub-total after every item has been added to the store */
+  if (action.type === 'ADD_ITEM' && nextReceiptReducerState.length !== prevReceiptReducerState.length) {
+    calculateSubTotal(store, nextState);
+  }
 };
 
 /**
@@ -35,6 +44,7 @@ export const makeStore = () => {
   const reducers = {
     priceListReducer,
     receiptReducer,
+    totalsReducer,
   };
 
   const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
