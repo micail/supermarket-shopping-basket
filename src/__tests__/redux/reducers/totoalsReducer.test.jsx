@@ -1,8 +1,6 @@
 import totalsReducer from '../../../redux/reducers/totalsReducer';
 import { updateTotal, clearTotals } from '../../../redux/actions/totalsActions';
 
-import dataMock from '../../dataMock/priceList';
-
 describe('Totals reducer tests', () => {
   const INITIAL_STATE = {
     subTotal: null,
@@ -23,7 +21,7 @@ describe('Totals reducer tests', () => {
     };
     expect(totalsReducer(INITIAL_STATE, updateTotal(index))).toEqual(expected);
   });
-  it('should delete the record and instance of price list item in the receipt', () => {
+  it('should clear the totals values', () => {
     const state = {
       subTotal: 20,
       savings: [],
