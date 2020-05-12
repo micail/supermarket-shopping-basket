@@ -40,4 +40,13 @@ describe('Middleware tests', () => {
     const subTotal = itemPrices.reduce((acc, value) => acc + value);
     expect(store.getState().totalsReducer.subTotal).toEqual(subTotal);
   });
+  it('should calculate savings', () => {
+    addItem(store, 0);
+    addItem(store, 0);
+    addItem(store, 0);
+    addItem(store, 1);
+    addItem(store, 1);
+    addItem(store, 1);
+    expect(store.getState().totalsReducer.savings).toEqual([['Beans 3 for 2', -0.5], ['Coke 2 for £1', -0.4]]);
+  });
 });
