@@ -1,21 +1,28 @@
 import makeStore from '../../redux/redux-store';
 import { priceList } from '../dataMock/priceList';
 
-import { loadPriceList, addItem } from '../../redux/middleware';
+import { addItem } from '../../redux/middleware';
 
 describe('Middleware tests', () => {
   const store = makeStore();
-  it('should load price list', () => {
+
+  it('should load price list on store creation', () => {
     const listClone = [...priceList];
-    loadPriceList(store, priceList);
-    expect(store.getState().priceListReducer).toEqual(listClone);
+    expect(store.getState().priceList).toEqual(listClone);
   });
+
   it('should record a new item added to the receipt', () => {
-    const index = 1;
-    addItem(store, index);
-    const expected = [1];
-    expect(store.getState().receiptReducer).toEqual(expected);
+    addItem(store, 1);
+    addItem(store, 0);
+    addItem(store, 0);
+    addItem(store, 0);
+    addItem(store, 1);
+    addItem(store, 1);
+    addItem(store, 1);
+    const expected = [1, 0, 0, 0, 1, 1, 1];
+    expect(store.getState().receipt).toEqual(expected);
   });
+
   it('should calculate final price form weight and record a new item ', () => {
     const listClone = [...priceList];
     const index = 2;
@@ -25,12 +32,13 @@ describe('Middleware tests', () => {
     const oranges = [index, weight];
     addItem(store, [oranges]);
     const finalPrice = Number((unitPrice * weight).toFixed(2));
-    const expected = [1, [2, 0.3, finalPrice]];
-    expect(store.getState().receiptReducer).toEqual(expected);
+    const expected = [1, 0, 0, 0, 1, 1, 1, [2, 0.3, finalPrice]];
+    expect(store.getState().receipt).toEqual(expected);
   });
+
   it('should calculate sub-total', () => {
     const listClone = [...priceList];
-    const basketItems = [1, [2, 0.3, 0.6]];
+    const basketItems = [1, 0, 0, 0, 1, 1, 1, [2, 0.3, 0.6]];
     const itemPrices = basketItems.map((item) => {
       if (typeof item === 'number') {
         return listClone[item][1];
@@ -38,15 +46,10 @@ describe('Middleware tests', () => {
       return item[2];
     });
     const subTotal = itemPrices.reduce((acc, value) => acc + value);
-    expect(store.getState().totalsReducer.subTotal).toEqual(subTotal);
+    expect(store.getState().totals.subTotal).toEqual(subTotal);
   });
+
   it('should calculate savings', () => {
-    addItem(store, 0);
-    addItem(store, 0);
-    addItem(store, 0);
-    addItem(store, 1);
-    addItem(store, 1);
-    addItem(store, 1);
-    expect(store.getState().totalsReducer.savings).toEqual([['Beans 3 for 2', -0.5], ['Coke 2 for £1', -0.4]]);
+    expect(store.getState().totals.savings).toEqual([['Beans 3 for 2', -0.5], ['Coke 2 for £1', -0.4]]);
   });
 });

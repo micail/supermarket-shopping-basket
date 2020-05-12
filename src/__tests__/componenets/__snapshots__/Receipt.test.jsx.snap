@@ -14,9 +14,58 @@ exports[`<Receipt /> should render correctly 1`] = `
   }
 >
   <Receipt>
-    <div
+    <ul
       className="Receipt"
-    />
+    >
+      <li
+        key="0"
+      >
+        Beans
+         
+        £0.5
+      </li>
+      <li
+        key="1"
+      >
+        Beans
+         
+        £0.5
+      </li>
+      <li
+        key="2"
+      >
+        Beans
+         
+        £0.5
+      </li>
+      <li
+        key="3"
+      >
+        Coke
+         
+        £0.5
+      </li>
+      <li
+        key="4"
+      >
+        Coke
+         
+        £0.5
+      </li>
+      <li
+        key="5"
+      >
+        Oranges
+        <br />
+        0.3
+         
+        1.99
+        /
+        kg
+         
+        0.6
+      </li>
+    </ul>
   </Receipt>
 </Provider>
 `;
