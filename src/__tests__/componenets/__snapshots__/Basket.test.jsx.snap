@@ -19,6 +19,7 @@ exports[`<Basket /> should render correctly 1`] = `
     >
       <button
         key="BEANS"
+        onClick={[Function]}
         type="button"
       >
         BEANS

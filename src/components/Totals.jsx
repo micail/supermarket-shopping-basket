@@ -1,12 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const Totals = () => {
   const totals = useSelector((state) => state.totals);
   const { subTotal } = totals;
   const { savings } = totals;
-  const savingsLength = savings.length
+  const savingsLength = savings ? savings.length : 0
   const { totalSavings } = totals;
   const { totalToPay } = totals;
 

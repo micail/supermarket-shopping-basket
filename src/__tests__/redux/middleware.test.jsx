@@ -50,6 +50,6 @@ describe('Middleware tests', () => {
   });
 
   it('should calculate savings', () => {
-    expect(store.getState().totals.savings).toEqual([['Beans 3 for 2', -0.5], ['Coke 2 for £1', -0.4]]);
+    expect(store.getState().totals.savings).toEqual([['Beans 3 for 2', -0.5], ['Coke 2 for £1', -0.4], ['Coke 2 for £1', -0.4]]);
   });
 });

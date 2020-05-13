@@ -20,6 +20,7 @@ exports[`<Totals /> should render correctly 1`] = `
       <span>
         -----
       </span>
+      <br />
       <span
         className="label"
       >
@@ -34,9 +35,10 @@ exports[`<Totals /> should render correctly 1`] = `
       <span>
         Savings
       </span>
+      <br />
       <span
         className="savings"
-        key="Beans 3 for 2"
+        key="0"
       >
         <span>
           Beans 3 for 2
@@ -44,10 +46,11 @@ exports[`<Totals /> should render correctly 1`] = `
         <span>
           -0.5
         </span>
+        <br />
       </span>
       <span
         className="savings"
-        key="Coke 2 for £1"
+        key="1"
       >
         <span>
           Coke 2 for £1
@@ -55,10 +58,13 @@ exports[`<Totals /> should render correctly 1`] = `
         <span>
           -0.4
         </span>
+        <br />
       </span>
+      <br />
       <span>
         -----
       </span>
+      <br />
       <span
         className="label"
       >
@@ -69,9 +75,11 @@ exports[`<Totals /> should render correctly 1`] = `
       >
         -0.9
       </span>
+      <br />
       <span>
         -------------------------
       </span>
+      <br />
       <span
         className="label"
       >

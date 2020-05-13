@@ -1,11 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Totals from './Totals';
+
+import {deleteItem} from '../redux/actions/receiptActions';
 
 const Receipt = () => {
   const priceList = useSelector((state) => state.priceList);
   const receipt = useSelector((state) => state.receipt);
+  
+  const dispatch = useDispatch();
+  const removeItem = (position) => {
+    dispatch(deleteItem(position));
+  };
 
   const standardItem = (item, index) => {
     const itemName = priceList[item][0];
@@ -15,6 +22,10 @@ const Receipt = () => {
         {itemName}
         {' '}
         {itemPrice}
+        {' '}
+        <button key={itemName} type="button" onClick={() => removeItem(index)}>
+          Delete
+            </button>
       </li>
     );
   };

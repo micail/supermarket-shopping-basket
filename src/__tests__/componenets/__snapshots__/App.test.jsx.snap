@@ -28,6 +28,56 @@ exports[`<App /> should render correctly 1`] = `
             className="Basket"
           />
         </Basket>
+        <Receipt>
+          <ul
+            className="Receipt"
+          />
+          <Totals>
+            <div
+              className="Totals"
+            >
+              <span>
+                -----
+              </span>
+              <br />
+              <span
+                className="label"
+              >
+                Sub-total
+              </span>
+              <span
+                className="value sub-total"
+              />
+              <br />
+              <br />
+              <span>
+                -----
+              </span>
+              <br />
+              <span
+                className="label"
+              >
+                Total savings
+              </span>
+              <span
+                className="value total-savings"
+              />
+              <br />
+              <span>
+                -------------------------
+              </span>
+              <br />
+              <span
+                className="label"
+              >
+                Total to Pay
+              </span>
+              <span
+                className="value total-to-pay"
+              />
+            </div>
+          </Totals>
+        </Receipt>
       </div>
     </App>
   </Connect(App)>

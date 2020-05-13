@@ -23,6 +23,14 @@ exports[`<Receipt /> should render correctly 1`] = `
         Beans
          
         £0.5
+         
+        <button
+          key="Beans"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
       </li>
       <li
         key="1"
@@ -30,6 +38,14 @@ exports[`<Receipt /> should render correctly 1`] = `
         Beans
          
         £0.5
+         
+        <button
+          key="Beans"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
       </li>
       <li
         key="2"
@@ -37,6 +53,14 @@ exports[`<Receipt /> should render correctly 1`] = `
         Beans
          
         £0.5
+         
+        <button
+          key="Beans"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
       </li>
       <li
         key="3"
@@ -44,6 +68,14 @@ exports[`<Receipt /> should render correctly 1`] = `
         Coke
          
         £0.5
+         
+        <button
+          key="Coke"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
       </li>
       <li
         key="4"
@@ -51,6 +83,14 @@ exports[`<Receipt /> should render correctly 1`] = `
         Coke
          
         £0.5
+         
+        <button
+          key="Coke"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
       </li>
       <li
         key="5"
@@ -73,6 +113,7 @@ exports[`<Receipt /> should render correctly 1`] = `
         <span>
           -----
         </span>
+        <br />
         <span
           className="label"
         >
@@ -87,9 +128,10 @@ exports[`<Receipt /> should render correctly 1`] = `
         <span>
           Savings
         </span>
+        <br />
         <span
           className="savings"
-          key="Beans 3 for 2"
+          key="0"
         >
           <span>
             Beans 3 for 2
@@ -97,10 +139,11 @@ exports[`<Receipt /> should render correctly 1`] = `
           <span>
             -0.5
           </span>
+          <br />
         </span>
         <span
           className="savings"
-          key="Coke 2 for £1"
+          key="1"
         >
           <span>
             Coke 2 for £1
@@ -108,10 +151,13 @@ exports[`<Receipt /> should render correctly 1`] = `
           <span>
             -0.4
           </span>
+          <br />
         </span>
+        <br />
         <span>
           -----
         </span>
+        <br />
         <span
           className="label"
         >
@@ -122,9 +168,11 @@ exports[`<Receipt /> should render correctly 1`] = `
         >
           -0.9
         </span>
+        <br />
         <span>
           -------------------------
         </span>
+        <br />
         <span
           className="label"
         >
