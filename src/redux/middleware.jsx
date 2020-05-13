@@ -77,12 +77,12 @@ export const calculateSavings = (store, state, totals) => {
 
     if (key === '0' && itemsNo >= 3) {
       const packs = (itemsNo / 3).toFixed();
-      savingsArr = savingsArr.concat(Array(Number(packs)).fill(['Beans 3 for 2', -0.5]));
+      savingsArr = savingsArr.concat(Array(Number(packs)).fill(['Beans 3 for 2', -0.50]));
     }
 
     if (key === '1' && itemsNo >= 2) {
       const packs = (itemsNo / 2).toFixed();
-      savingsArr = savingsArr.concat(Array(Number(packs)).fill(['Coke 2 for £1', -0.4]));
+      savingsArr = savingsArr.concat(Array(Number(packs)).fill(['Coke 2 for £1', -0.40]));
     }
   });
 
