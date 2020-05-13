@@ -93,7 +93,8 @@ export const calculateSubTotal = (store, state) => {
       }
       return item[2];
     });
-    const subTotal = itemPrices.reduce((acc, value) => acc + value);
+    const subTotal = Number((itemPrices.reduce((acc, value) => acc + value)).toFixed(2));
+    console.log(subTotal)
     const totals = { subTotal };
     calculateSavings(store, state, totals);
   }
