@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Totals from './Totals';
 import { Button } from 'react-bootstrap';
+
 import { deleteItem } from '../redux/actions/receiptActions';
 
 const Receipt = () => {
@@ -32,7 +33,6 @@ const Receipt = () => {
 
   const weightItem = (item, index) => {
     const priceListKey = item[0];
-    console.log(priceList)
     const itemName = priceList[priceListKey][0];
     const price = priceList[priceListKey][1];
     const unit = priceList[priceListKey][2];

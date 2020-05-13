@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {Button} from 'react-bootstrap';
+=======
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
+>>>>>>> store
 
 import { addItem } from '../redux/actions/receiptActions';
 

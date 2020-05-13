@@ -24,22 +24,30 @@ export const calculatePriceOnWeight = (prevStore, data) => {
 };
 
 export const calculateTotalToPay = (store, totals) => {
-  const sum = ((totals.subTotal) + (totals.totalSavings || 0)).toFixed(2);
+  let sum = null;
+  const { subTotal } = totals;
+  const { totalSavings } = totals;
+
+  if (totalSavings) {
+    sum = ((totals.subTotal) + (totals.totalSavings)).toFixed(2);
+  } else {
+    sum = subTotal;
+  }
   const totalToPay = { totalToPay: sum };
   const newTotals = { ...totals, ...totalToPay };
   store.dispatch(totalsActions.updateTotal({ ...newTotals }));
 };
 
 export const calculateTotalSavings = (store, totals, savingsArr) => {
+  let sum = null;
   if (savingsArr.length > 0) {
     const arrFlatten = [].concat(...savingsArr);
     const numValues = arrFlatten.filter(Number);
-    const sum = numValues.reduce((acc, cur) => acc + cur);
-    const totalSavings = { totalSavings: sum };
-    const newTotals = { ...totals, ...totalSavings };
-    return calculateTotalToPay(store, newTotals);
+    sum = numValues.reduce((acc, cur) => acc + cur);
   }
-  calculateTotalToPay(store, totals);
+  const totalSavings = { totalSavings: sum };
+  const newTotals = { ...totals, ...totalSavings };
+  calculateTotalToPay(store, newTotals);
 };
 
 export const calculateSavings = (store, state, totals) => {
@@ -84,8 +92,19 @@ export const calculateSavings = (store, state, totals) => {
 };
 
 export const calculateSubTotal = (store, state) => {
+<<<<<<< HEAD
   const priceList = [...state.priceList];
   const basketItems = [...state.receipt];
+=======
+<<<<<<< Updated upstream
+  const listPrice = [...state.priceListReducer];
+  const basketItems = [...state.receiptReducer];
+=======
+  const priceList = [...state.priceList];
+  const basketItems = [...state.receipt];
+  let subTotal = null;
+>>>>>>> Stashed changes
+>>>>>>> store
   if (basketItems.length > 0) {
     const itemPrices = basketItems.map((item) => {
       if (typeof item === 'number') {
@@ -93,8 +112,8 @@ export const calculateSubTotal = (store, state) => {
       }
       return item[2];
     });
-    const subTotal = Number((itemPrices.reduce((acc, value) => acc + value)).toFixed(2));
-    const totals = { subTotal };
-    calculateSavings(store, state, totals);
+    subTotal = Number((itemPrices.reduce((acc, value) => acc + value)).toFixed(2));
   }
+  const totals = { subTotal };
+  calculateSavings(store, state, totals);
 };
