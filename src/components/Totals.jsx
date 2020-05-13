@@ -6,20 +6,29 @@ const Totals = () => {
   const totals = useSelector((state) => state.totals);
   const { subTotal } = totals;
   const { savings } = totals;
+  const savingsLength = savings.length
   const { totalSavings } = totals;
   const { totalToPay } = totals;
 
   const printSavings = (savingsArr) => {
-    return savingsArr.map((el) => {
-      const name = el[0];
-      const discount = (el[1]).toString();
-      return (
-        <span key={name} className="savings">
-          <span>{name}</span>
-          <span>{discount}</span>
-        </span>
-      );
-    });
+    return (
+      <>
+        <span>Savings</span>
+        <br />
+        {savingsArr.map((el, index) => {
+          const name = el[0];
+          const discount = (el[1]).toString();
+          return (
+            <span key={index} className="savings">
+              <span>{name}</span>
+              <span>{discount}</span>
+              <br />
+            </span>
+          );
+        })
+        }
+      </>
+    );
   };
 
   return (
@@ -29,9 +38,7 @@ const Totals = () => {
       <span className="label">Sub-total</span>
       <span className="value sub-total">{subTotal}</span>
       <br />
-      <span>Savings</span>
-      <br />
-      {printSavings(savings)}
+      {savingsLength > 0 ? printSavings(savings) : null}
       <br />
       <span>-----</span>
       <br />
