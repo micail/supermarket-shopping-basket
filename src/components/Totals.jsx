@@ -25,15 +25,21 @@ const Totals = () => {
   return (
     <div className="Totals">
       <span>-----</span>
+      <br />
       <span className="label">Sub-total</span>
       <span className="value sub-total">{subTotal}</span>
       <br />
       <span>Savings</span>
+      <br />
       {printSavings(savings)}
+      <br />
       <span>-----</span>
+      <br />
       <span className="label">Total savings</span>
       <span className="value total-savings">{totalSavings}</span>
+      <br />
       <span>-------------------------</span>
+      <br />
       <span className="label">Total to Pay</span>
       <span className="value total-to-pay">{totalToPay}</span>
     </div>
