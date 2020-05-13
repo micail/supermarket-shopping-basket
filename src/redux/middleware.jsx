@@ -15,7 +15,7 @@ export const calculatePriceOnWeight = (prevStore, data) => {
   const itemListPosition = addedItem[0];
   const weight = addedItem[1];
 
-  const priceList = prevStore.priceListReducer;
+  const priceList = prevStore.priceList;
   const item = priceList[itemListPosition];
   const unitPrice = item[1];
   const finalPrice = Number((unitPrice * weight).toFixed(2));
@@ -43,7 +43,7 @@ export const calculateTotalSavings = (store, totals, savingsArr) => {
 };
 
 export const calculateSavings = (store, state, totals) => {
-  const basketItems = [...state.receiptReducer];
+  const basketItems = [...state.receipt];
 
   const basketItemsKeys = basketItems.map((item) => {
     if (typeof item === 'number') {
@@ -84,12 +84,12 @@ export const calculateSavings = (store, state, totals) => {
 };
 
 export const calculateSubTotal = (store, state) => {
-  const listPrice = [...state.priceListReducer];
-  const basketItems = [...state.receiptReducer];
+  const priceList = [...state.priceList];
+  const basketItems = [...state.receipt];
   if (basketItems.length > 0) {
     const itemPrices = basketItems.map((item) => {
       if (typeof item === 'number') {
-        return listPrice[item][1];
+        return priceList[item][1];
       }
       return item[2];
     });

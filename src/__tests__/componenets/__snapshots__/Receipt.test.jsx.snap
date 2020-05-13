@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Receipt /> should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Receipt>
+    <ul
+      className="Receipt"
+    >
+      <li
+        key="0"
+      >
+        Beans
+         
+        £0.5
+         
+        <button
+          key="Beans"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+      <li
+        key="1"
+      >
+        Beans
+         
+        £0.5
+         
+        <button
+          key="Beans"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+      <li
+        key="2"
+      >
+        Beans
+         
+        £0.5
+         
+        <button
+          key="Beans"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+      <li
+        key="3"
+      >
+        Coke
+         
+        £0.5
+         
+        <button
+          key="Coke"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+      <li
+        key="4"
+      >
+        Coke
+         
+        £0.5
+         
+        <button
+          key="Coke"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete
+        </button>
+      </li>
+      <li
+        key="5"
+      >
+        Oranges
+        <br />
+        0.3
+         
+        1.99
+        /
+        kg
+         
+        0.6
+      </li>
+    </ul>
+    <Totals>
+      <div
+        className="Totals"
+      >
+        <span>
+          -----
+        </span>
+        <br />
+        <span
+          className="label"
+        >
+          Sub-total
+        </span>
+        <span
+          className="value sub-total"
+        >
+          3.5
+        </span>
+        <br />
+        <span>
+          Savings
+        </span>
+        <br />
+        <span
+          className="savings"
+          key="0"
+        >
+          <span>
+            Beans 3 for 2
+          </span>
+          <span>
+            -0.5
+          </span>
+          <br />
+        </span>
+        <span
+          className="savings"
+          key="1"
+        >
+          <span>
+            Coke 2 for £1
+          </span>
+          <span>
+            -0.4
+          </span>
+          <br />
+        </span>
+        <br />
+        <span>
+          -----
+        </span>
+        <br />
+        <span
+          className="label"
+        >
+          Total savings
+        </span>
+        <span
+          className="value total-savings"
+        >
+          -0.9
+        </span>
+        <br />
+        <span>
+          -------------------------
+        </span>
+        <br />
+        <span
+          className="label"
+        >
+          Total to Pay
+        </span>
+        <span
+          className="value total-to-pay"
+        >
+          2.60
+        </span>
+      </div>
+    </Totals>
+  </Receipt>
+</Provider>
+`;
