@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-import Totals from './Totals';
 import { Button } from 'react-bootstrap';
 
+import Totals from './Totals';
 import { deleteItem } from '../redux/actions/receiptActions';
 
 const Receipt = () => {
@@ -55,16 +54,18 @@ const Receipt = () => {
   };
 
   const CheckoutSummary = () => {
-    return (<ul className="col-xs-12 list-group">
-      {
-        receipt.map((item, index) => {
-          return typeof item === 'number'
-            ? standardItem(item, index)
-            : weightItem(item, index);
-        })
-      }
-    </ul>);
-  }
+    return (
+      <ul className="col-xs-12 list-group">
+        {
+          receipt.map((item, index) => {
+            return typeof item === 'number'
+              ? standardItem(item, index)
+              : weightItem(item, index);
+          })
+        }
+      </ul>
+    );
+  };
 
   return (
     <div className="Receipt col-md-6">

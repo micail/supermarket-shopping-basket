@@ -92,19 +92,11 @@ export const calculateSavings = (store, state, totals) => {
 };
 
 export const calculateSubTotal = (store, state) => {
-<<<<<<< HEAD
-  const priceList = [...state.priceList];
-  const basketItems = [...state.receipt];
-=======
-<<<<<<< Updated upstream
-  const listPrice = [...state.priceListReducer];
-  const basketItems = [...state.receiptReducer];
-=======
+
   const priceList = [...state.priceList];
   const basketItems = [...state.receipt];
   let subTotal = null;
->>>>>>> Stashed changes
->>>>>>> store
+
   if (basketItems.length > 0) {
     const itemPrices = basketItems.map((item) => {
       if (typeof item === 'number') {
