@@ -11,7 +11,7 @@ describe('<Basket />', () => {
   const store = mockStore({
     priceList: [['Beans', 0.50]],
     receipt: [],
-    totals: [],
+    totals: {},
   });
   const wrapper = mount(<Provider store={store}><Basket /></Provider>);
 
