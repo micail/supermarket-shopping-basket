@@ -6,9 +6,11 @@ import Receipt from './Receipt';
 
 const App = () => {
   return (
-    <div className="App">
-      <Basket />
-      <Receipt />
+    <div className="App container">
+      <div className="row">
+        <Basket />
+        <Receipt />
+      </div>
     </div>
   );
 };

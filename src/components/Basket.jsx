@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {Button} from 'react-bootstrap';
 
 import { addItem } from '../redux/actions/receiptActions';
 
@@ -12,18 +13,18 @@ const Basket = () => {
   };
 
   return (
-    <div className="Basket">
+    <div className="Basket col-md-6 d-flex flex-column">
       {
         priceList.map((item, index) => {
           const itemName = (item[0]).toUpperCase();
-          const itemPrice = `£${item[1]}`;
+          const itemPrice = item[1];
           const position = index;
           return (
-            <button key={itemName} type="button" onClick={() => buyItem(position)}>
+            <Button className="m-1" variant="success" size="md" key={itemName} type="button" onClick={() => buyItem(position)}>
               {itemName}
               {' '}
               {itemPrice}
-            </button>
+            </Button>
           );
         })
       }

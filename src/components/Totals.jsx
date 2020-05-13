@@ -19,11 +19,11 @@ const Totals = () => {
           const name = el[0];
           const discount = (el[1]).toString();
           return (
-            <span key={index} className="savings">
-              <span>{name}</span>
-              <span>{discount}</span>
+            <li className="list-group-item border-0 d-flex justify-content-between" key={index}>
+              <span className="label h4">{name}</span>
+              <span className="value h4">{discount}</span>
               <br />
-            </span>
+            </li>
           );
         })
         }
@@ -32,24 +32,26 @@ const Totals = () => {
   };
 
   return (
-    <div className="Totals">
-      <span>-----</span>
-      <br />
-      <span className="label">Sub-total</span>
-      <span className="value sub-total">{subTotal}</span>
-      <br />
+    <ul className="Totals col-xs-12 list-group">
+      <li className="list-group-item border-0">-----</li>
+      <li className="list-group-item border-0 d-flex justify-content-between">
+      <span className="label h4">Sub-total</span>
+      <span className="value sub-total h4">{subTotal}</span>
+      </li>
       {savingsLength > 0 ? printSavings(savings) : null}
-      <br />
-      <span>-----</span>
-      <br />
-      <span className="label">Total savings</span>
-      <span className="value total-savings">{totalSavings}</span>
-      <br />
-      <span>-------------------------</span>
-      <br />
-      <span className="label">Total to Pay</span>
-      <span className="value total-to-pay">{totalToPay}</span>
-    </div>
+      <li className="list-group-item border-0">-----</li>
+      <li className="list-group-item border-0 d-flex justify-content-between">
+      <span className="label h4">Total savings</span>
+      <span className="value total-savings h4">{totalSavings}</span>
+      </li>
+      <li className="list-group-item border-0">
+      -------------------------
+      </li>
+      <li className="list-group-item border-0 d-flex justify-content-between">
+      <span className="label h4">Total to Pay</span>
+      <span className="value total-to-pay h4">{totalToPay}</span>
+      </li>
+    </ul>
   );
 };
 
