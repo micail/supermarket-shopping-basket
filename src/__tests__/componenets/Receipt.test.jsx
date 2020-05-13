@@ -31,19 +31,4 @@ describe('<Receipt />', () => {
   it('should render list of items based on priceList occurrence in the receipt', () => {
     expect(wrapper.find('.Receipt').children().length).toEqual(6);
   });
-  it('should render totals', () => {
-    expect(wrapper.find('.Totals').children().length).toEqual(4);
-  });
-  it('should render subTotal', () => {
-    expect(wrapper.find('.subTotal').text()).toEqual('3.5');
-  });
-  it('should render savings', () => {
-    expect(wrapper.find('.savings').text()).toEqual('Beans 3 for 2 -0.5 Coke 2 for £1 -0.4');
-  });
-  it('should render totalSavings', () => {
-    expect(wrapper.find('.totalSavings').text()).toEqual('-0.9');
-  });
-  it('should render totalToPay', () => {
-    expect(wrapper.find('.totalToPay').text()).toEqual('2.60');
-  });
 });

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import Totals from './Totals';
 
 const Receipt = () => {
   const priceList = useSelector((state) => state.priceList);
@@ -43,15 +44,18 @@ const Receipt = () => {
   };
 
   return (
-    <ul className="Receipt">
-      {
-        receipt.map((item, index) => { 
-          return typeof item === 'number'
-            ? standardItem(item, index)
-            : weightItem(item, index);
-        })
-      }
-    </ul>
+    <>
+      <ul className="Receipt">
+        {
+          receipt.map((item, index) => {
+            return typeof item === 'number'
+              ? standardItem(item, index)
+              : weightItem(item, index);
+          })
+        }
+      </ul>
+      <Totals />
+    </>
   );
 };
 

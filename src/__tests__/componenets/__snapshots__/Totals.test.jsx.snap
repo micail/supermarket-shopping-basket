@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Totals /> should render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Totals>
+    <div
+      className="Totals"
+    >
+      <span>
+        -----
+      </span>
+      <span
+        className="label"
+      >
+        Sub-total
+      </span>
+      <span
+        className="value sub-total"
+      >
+        3.5
+      </span>
+      <br />
+      <span>
+        Savings
+      </span>
+      <span
+        className="savings"
+        key="Beans 3 for 2"
+      >
+        <span>
+          Beans 3 for 2
+        </span>
+        <span>
+          -0.5
+        </span>
+      </span>
+      <span
+        className="savings"
+        key="Coke 2 for £1"
+      >
+        <span>
+          Coke 2 for £1
+        </span>
+        <span>
+          -0.4
+        </span>
+      </span>
+      <span>
+        -----
+      </span>
+      <span
+        className="label"
+      >
+        Total savings
+      </span>
+      <span
+        className="value total-savings"
+      >
+        -0.9
+      </span>
+      <span>
+        -------------------------
+      </span>
+      <span
+        className="label"
+      >
+        Total to Pay
+      </span>
+      <span
+        className="value total-to-pay"
+      >
+        2.60
+      </span>
+    </div>
+  </Totals>
+</Provider>
+`;
