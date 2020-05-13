@@ -32,7 +32,7 @@ const pipeLine = (store) => (next) => (action) => {
 
   const nextState = store.getState();
   /** Calculate sub-total after every item has been added to the store */
-  if (action.type === 'ADD_ITEM') {
+  if (action.type === 'ADD_ITEM' || action.type === 'DELETE_ITEM' ) {
     calculateSubTotal(store, nextState);
   }
 };
