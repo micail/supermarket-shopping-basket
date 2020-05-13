@@ -24,19 +24,22 @@ export const calculatePriceOnWeight = (prevStore, data) => {
 };
 
 export const calculateTotalToPay = (store, totals) => {
-  const sum = ((totals.subTotal) + (totals.totalSavings)).toFixed(2);
+  const sum = ((totals.subTotal) + (totals.totalSavings || 0)).toFixed(2);
   const totalToPay = { totalToPay: sum };
   const newTotals = { ...totals, ...totalToPay };
   store.dispatch(totalsActions.updateTotal({ ...newTotals }));
 };
 
 export const calculateTotalSavings = (store, totals, savingsArr) => {
-  const arrFlatten = [].concat(...savingsArr);
-  const numValues = arrFlatten.filter(Number);
-  const sum = numValues.reduce((acc, cur) => acc + cur);
-  const totalSavings = { totalSavings: sum };
-  const newTotals = { ...totals, ...totalSavings };
-  calculateTotalToPay(store, newTotals);
+  if (savingsArr.length > 0) {
+    const arrFlatten = [].concat(...savingsArr);
+    const numValues = arrFlatten.filter(Number);
+    const sum = numValues.reduce((acc, cur) => acc + cur);
+    const totalSavings = { totalSavings: sum };
+    const newTotals = { ...totals, ...totalSavings };
+    return calculateTotalToPay(store, newTotals);
+  }
+  calculateTotalToPay(store, totals);
 };
 
 export const calculateSavings = (store, state, totals) => {
@@ -74,11 +77,10 @@ export const calculateSavings = (store, state, totals) => {
       savingsArr = savingsArr.concat(Array(packs).fill(['Coke 2 for £1', -0.4]));
     }
   });
-  if (savingsArr.length > 0) {
-    const savings = { savings: savingsArr };
-    const newTotals = { ...totals, ...savings };
-    calculateTotalSavings(store, newTotals, savingsArr);
-  }
+
+  const savings = { savings: savingsArr };
+  const newTotals = { ...totals, ...savings };
+  calculateTotalSavings(store, newTotals, savingsArr);
 };
 
 export const calculateSubTotal = (store, state) => {
