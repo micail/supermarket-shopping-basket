@@ -25,7 +25,7 @@ const WeightForm = ({ position, hideForm }) => {
     <Form onSubmit={buyItem}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Add weight</Form.Label>
-        <Form.Control type="number" placeholder="0" onChange={handleChange} value={formValue} />
+        <Form.Control type="number" placeholder="0" onChange={handleChange} value={formValue} min="0" />
         <Form.Text className="text-muted">
           Enter product weight and submit
         </Form.Text>
