@@ -14,177 +14,297 @@ exports[`<Receipt /> should render correctly 1`] = `
   }
 >
   <Receipt>
-    <ul
-      className="Receipt"
+    <div
+      className="Receipt col-md-6"
     >
-      <li
-        key="0"
-      >
-        Beans
-         
-        £0.5
-         
-        <button
-          key="Beans"
-          onClick={[Function]}
-          type="button"
+      <CheckoutSummary>
+        <ul
+          className="col-xs-12 list-group"
         >
-          Delete
-        </button>
-      </li>
-      <li
-        key="1"
-      >
-        Beans
-         
-        £0.5
-         
-        <button
-          key="Beans"
-          onClick={[Function]}
-          type="button"
+          <li
+            className="list-group-item border-0 h4 d-flex justify-content-between"
+            key="0"
+          >
+            <span>
+              Beans
+            </span>
+            <span>
+              0.5
+            </span>
+            <Button
+              active={false}
+              className="m-1"
+              disabled={false}
+              key="Beans"
+              onClick={[Function]}
+              size="xs"
+              type="button"
+              variant="warning"
+            >
+              <button
+                className="m-1 btn btn-warning btn-xs"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Delete
+              </button>
+            </Button>
+          </li>
+          <li
+            className="list-group-item border-0 h4 d-flex justify-content-between"
+            key="1"
+          >
+            <span>
+              Beans
+            </span>
+            <span>
+              0.5
+            </span>
+            <Button
+              active={false}
+              className="m-1"
+              disabled={false}
+              key="Beans"
+              onClick={[Function]}
+              size="xs"
+              type="button"
+              variant="warning"
+            >
+              <button
+                className="m-1 btn btn-warning btn-xs"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Delete
+              </button>
+            </Button>
+          </li>
+          <li
+            className="list-group-item border-0 h4 d-flex justify-content-between"
+            key="2"
+          >
+            <span>
+              Beans
+            </span>
+            <span>
+              0.5
+            </span>
+            <Button
+              active={false}
+              className="m-1"
+              disabled={false}
+              key="Beans"
+              onClick={[Function]}
+              size="xs"
+              type="button"
+              variant="warning"
+            >
+              <button
+                className="m-1 btn btn-warning btn-xs"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Delete
+              </button>
+            </Button>
+          </li>
+          <li
+            className="list-group-item border-0 h4 d-flex justify-content-between"
+            key="3"
+          >
+            <span>
+              Coke
+            </span>
+            <span>
+              0.5
+            </span>
+            <Button
+              active={false}
+              className="m-1"
+              disabled={false}
+              key="Coke"
+              onClick={[Function]}
+              size="xs"
+              type="button"
+              variant="warning"
+            >
+              <button
+                className="m-1 btn btn-warning btn-xs"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Delete
+              </button>
+            </Button>
+          </li>
+          <li
+            className="list-group-item border-0 h4 d-flex justify-content-between"
+            key="4"
+          >
+            <span>
+              Coke
+            </span>
+            <span>
+              0.5
+            </span>
+            <Button
+              active={false}
+              className="m-1"
+              disabled={false}
+              key="Coke"
+              onClick={[Function]}
+              size="xs"
+              type="button"
+              variant="warning"
+            >
+              <button
+                className="m-1 btn btn-warning btn-xs"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Delete
+              </button>
+            </Button>
+          </li>
+          <li
+            className="list-group-item border-0 h4 d-flex justify-content-between"
+            key="5"
+          >
+            Oranges
+            <br />
+            0.3
+            kg @  
+            1.99
+            /
+            kg
+             
+            0.6
+            <Button
+              active={false}
+              className="m-1"
+              disabled={false}
+              key="Oranges"
+              onClick={[Function]}
+              size="xs"
+              type="button"
+              variant="warning"
+            >
+              <button
+                className="m-1 btn btn-warning btn-xs"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Delete
+              </button>
+            </Button>
+          </li>
+        </ul>
+      </CheckoutSummary>
+      <Totals>
+        <ul
+          className="Totals col-xs-12 list-group"
         >
-          Delete
-        </button>
-      </li>
-      <li
-        key="2"
-      >
-        Beans
-         
-        £0.5
-         
-        <button
-          key="Beans"
-          onClick={[Function]}
-          type="button"
-        >
-          Delete
-        </button>
-      </li>
-      <li
-        key="3"
-      >
-        Coke
-         
-        £0.5
-         
-        <button
-          key="Coke"
-          onClick={[Function]}
-          type="button"
-        >
-          Delete
-        </button>
-      </li>
-      <li
-        key="4"
-      >
-        Coke
-         
-        £0.5
-         
-        <button
-          key="Coke"
-          onClick={[Function]}
-          type="button"
-        >
-          Delete
-        </button>
-      </li>
-      <li
-        key="5"
-      >
-        Oranges
-        <br />
-        0.3
-         
-        1.99
-        /
-        kg
-         
-        0.6
-      </li>
-    </ul>
-    <Totals>
-      <div
-        className="Totals"
-      >
-        <span>
-          -----
-        </span>
-        <br />
-        <span
-          className="label"
-        >
-          Sub-total
-        </span>
-        <span
-          className="value sub-total"
-        >
-          3.5
-        </span>
-        <br />
-        <span>
-          Savings
-        </span>
-        <br />
-        <span
-          className="savings"
-          key="0"
-        >
-          <span>
-            Beans 3 for 2
+          <li
+            className="list-group-item border-0 display-4"
+          >
+            -----
+          </li>
+          <li
+            className="list-group-item border-0 d-flex justify-content-between"
+          >
+            <span
+              className="label h4"
+            >
+              Sub-total
+            </span>
+            <span
+              className="value sub-total h4"
+            >
+              3.5
+            </span>
+          </li>
+          <span
+            className="list-group-item border-0 h4"
+          >
+            Savings
           </span>
-          <span>
-            -0.5
-          </span>
-          <br />
-        </span>
-        <span
-          className="savings"
-          key="1"
-        >
-          <span>
-            Coke 2 for £1
-          </span>
-          <span>
-            -0.4
-          </span>
-          <br />
-        </span>
-        <br />
-        <span>
-          -----
-        </span>
-        <br />
-        <span
-          className="label"
-        >
-          Total savings
-        </span>
-        <span
-          className="value total-savings"
-        >
-          -0.9
-        </span>
-        <br />
-        <span>
-          -------------------------
-        </span>
-        <br />
-        <span
-          className="label"
-        >
-          Total to Pay
-        </span>
-        <span
-          className="value total-to-pay"
-        >
-          2.60
-        </span>
-      </div>
-    </Totals>
+          <li
+            className="list-group-item border-0 d-flex justify-content-between savings"
+            key="0"
+          >
+            <span
+              className="label h4"
+            >
+              Beans 3 for 2
+            </span>
+            <span
+              className="value h4"
+            >
+              -0.5
+            </span>
+          </li>
+          <li
+            className="list-group-item border-0 d-flex justify-content-between savings"
+            key="1"
+          >
+            <span
+              className="label h4"
+            >
+              Coke 2 for £1
+            </span>
+            <span
+              className="value h4"
+            >
+              -0.4
+            </span>
+          </li>
+          <li
+            className="list-group-item border-0 display-4"
+          >
+            -----
+          </li>
+          <li
+            className="list-group-item border-0 d-flex justify-content-between"
+          >
+            <span
+              className="label h4"
+            >
+              Total savings
+            </span>
+            <span
+              className="value total-savings h4"
+            >
+              -0.9
+            </span>
+          </li>
+          <li
+            className="list-group-item border-0 display-4"
+          >
+            -------------------------
+          </li>
+          <li
+            className="list-group-item border-0 d-flex justify-content-between"
+          >
+            <span
+              className="label h4"
+            >
+              Total to Pay
+            </span>
+            <span
+              className="value total-to-pay h4"
+            >
+              2.60
+            </span>
+          </li>
+        </ul>
+      </Totals>
+    </div>
   </Receipt>
 </Provider>
 `;
