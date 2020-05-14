@@ -29,6 +29,6 @@ describe('<Receipt />', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('should render list of items based on priceList occurrence in the receipt', () => {
-    expect(wrapper.find('.Receipt').children().length).toEqual(6);
+    expect(wrapper.find('.Receipt').children().length).toEqual(2);
   });
 });

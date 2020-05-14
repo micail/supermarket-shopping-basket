@@ -21,63 +21,85 @@ exports[`<App /> should render correctly 1`] = `
       totals={Array []}
     >
       <div
-        className="App"
+        className="App container"
       >
-        <Basket>
-          <div
-            className="Basket"
-          />
-        </Basket>
-        <Receipt>
-          <ul
-            className="Receipt"
-          />
-          <Totals>
+        <div
+          className="row"
+        >
+          <Basket>
             <div
-              className="Totals"
+              className="Basket col-md-6 d-flex flex-column"
+            />
+          </Basket>
+          <Receipt>
+            <div
+              className="Receipt col-md-6"
             >
-              <span>
-                -----
-              </span>
-              <br />
-              <span
-                className="label"
-              >
-                Sub-total
-              </span>
-              <span
-                className="value sub-total"
-              />
-              <br />
-              <br />
-              <span>
-                -----
-              </span>
-              <br />
-              <span
-                className="label"
-              >
-                Total savings
-              </span>
-              <span
-                className="value total-savings"
-              />
-              <br />
-              <span>
-                -------------------------
-              </span>
-              <br />
-              <span
-                className="label"
-              >
-                Total to Pay
-              </span>
-              <span
-                className="value total-to-pay"
-              />
+              <CheckoutSummary>
+                <ul
+                  className="col-xs-12 list-group"
+                />
+              </CheckoutSummary>
+              <Totals>
+                <ul
+                  className="Totals col-xs-12 list-group"
+                >
+                  <li
+                    className="list-group-item border-0 display-4"
+                  >
+                    -----
+                  </li>
+                  <li
+                    className="list-group-item border-0 d-flex justify-content-between"
+                  >
+                    <span
+                      className="label h4"
+                    >
+                      Sub-total
+                    </span>
+                    <span
+                      className="value sub-total h4"
+                    />
+                  </li>
+                  <li
+                    className="list-group-item border-0 display-4"
+                  >
+                    -----
+                  </li>
+                  <li
+                    className="list-group-item border-0 d-flex justify-content-between"
+                  >
+                    <span
+                      className="label h4"
+                    >
+                      Total savings
+                    </span>
+                    <span
+                      className="value total-savings h4"
+                    />
+                  </li>
+                  <li
+                    className="list-group-item border-0 display-4"
+                  >
+                    -------------------------
+                  </li>
+                  <li
+                    className="list-group-item border-0 d-flex justify-content-between"
+                  >
+                    <span
+                      className="label h4"
+                    >
+                      Total to Pay
+                    </span>
+                    <span
+                      className="value total-to-pay h4"
+                    />
+                  </li>
+                </ul>
+              </Totals>
             </div>
-          </Totals>
-        </Receipt>
+          </Receipt>
+        </div>
       </div>
     </App>
   </Connect(App)>

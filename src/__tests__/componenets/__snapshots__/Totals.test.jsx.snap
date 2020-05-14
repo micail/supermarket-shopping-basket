@@ -14,83 +14,102 @@ exports[`<Totals /> should render correctly 1`] = `
   }
 >
   <Totals>
-    <div
-      className="Totals"
+    <ul
+      className="Totals col-xs-12 list-group"
     >
-      <span>
+      <li
+        className="list-group-item border-0 display-4"
+      >
         -----
-      </span>
-      <br />
-      <span
-        className="label"
+      </li>
+      <li
+        className="list-group-item border-0 d-flex justify-content-between"
       >
-        Sub-total
-      </span>
+        <span
+          className="label h4"
+        >
+          Sub-total
+        </span>
+        <span
+          className="value sub-total h4"
+        >
+          3.5
+        </span>
+      </li>
       <span
-        className="value sub-total"
+        className="list-group-item border-0 h4"
       >
-        3.5
-      </span>
-      <br />
-      <span>
         Savings
       </span>
-      <br />
-      <span
-        className="savings"
+      <li
+        className="list-group-item border-0 d-flex justify-content-between savings"
         key="0"
       >
-        <span>
+        <span
+          className="label h4"
+        >
           Beans 3 for 2
         </span>
-        <span>
+        <span
+          className="value h4"
+        >
           -0.5
         </span>
-        <br />
-      </span>
-      <span
-        className="savings"
+      </li>
+      <li
+        className="list-group-item border-0 d-flex justify-content-between savings"
         key="1"
       >
-        <span>
+        <span
+          className="label h4"
+        >
           Coke 2 for £1
         </span>
-        <span>
+        <span
+          className="value h4"
+        >
           -0.4
         </span>
-        <br />
-      </span>
-      <br />
-      <span>
+      </li>
+      <li
+        className="list-group-item border-0 display-4"
+      >
         -----
-      </span>
-      <br />
-      <span
-        className="label"
+      </li>
+      <li
+        className="list-group-item border-0 d-flex justify-content-between"
       >
-        Total savings
-      </span>
-      <span
-        className="value total-savings"
+        <span
+          className="label h4"
+        >
+          Total savings
+        </span>
+        <span
+          className="value total-savings h4"
+        >
+          -0.9
+        </span>
+      </li>
+      <li
+        className="list-group-item border-0 display-4"
       >
-        -0.9
-      </span>
-      <br />
-      <span>
         -------------------------
-      </span>
-      <br />
-      <span
-        className="label"
+      </li>
+      <li
+        className="list-group-item border-0 d-flex justify-content-between"
       >
-        Total to Pay
-      </span>
-      <span
-        className="value total-to-pay"
-      >
-        2.60
-      </span>
-    </div>
+        <span
+          className="label h4"
+        >
+          Total to Pay
+        </span>
+        <span
+          className="value total-to-pay h4"
+        >
+          2.60
+        </span>
+      </li>
+    </ul>
   </Totals>
 </Provider>
 `;

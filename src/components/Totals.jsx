@@ -19,7 +19,7 @@ const Totals = () => {
           const name = el[0];
           const discount = (el[1]).toString();
           return (
-            <li className="list-group-item border-0 d-flex justify-content-between" key={index}>
+            <li className="list-group-item border-0 d-flex justify-content-between savings" key={index}>
               <span className="label h4">{name}</span>
               <span className="value h4">{discount}</span>
               <br />
