@@ -15,17 +15,29 @@ exports[`<Basket /> should render correctly 1`] = `
 >
   <Basket>
     <div
-      className="Basket"
+      className="Basket col-md-6 d-flex flex-column"
     >
-      <button
+      <Button
+        active={false}
+        className="m-1"
+        disabled={false}
         key="BEANS"
         onClick={[Function]}
+        size="md"
         type="button"
+        variant="success"
       >
-        BEANS
-         
-        £0.5
-      </button>
+        <button
+          className="m-1 btn btn-success btn-md"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          BEANS
+           
+          0.5
+        </button>
+      </Button>
     </div>
   </Basket>
 </Provider>

@@ -19,6 +19,6 @@ describe('<Basket />', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('should render buttons based on list price items', () => {
-    expect(wrapper.find('button').text()).toEqual('BEANS £0.5');
+    expect(wrapper.find('button').text()).toEqual('BEANS 0.5');
   });
 });
