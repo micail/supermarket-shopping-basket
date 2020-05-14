@@ -1,8 +1,4 @@
-# TODO SPA with change recording feature 
-
-## Demo
-
-[TODO SPA](https://todo-record.herokuapp.com/)
+# Supermarket Shopping Basket
 
 ## Available Scripts
 
